@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редактирование</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color:#2F4F4F">
+<header th:insert="blocks/header :: header"> </header>
+
+<div class="container mt-5 mb-5">
+    <h1>Редактирование</h1>
+    <div th:each="el : ${post}">
+    <form method="post">
+        <input type="text" th:value="${el.name}" name="name" placeholder="Введите название инструмента" class="form-control">
+        <input type="text" th:value="${el.maker}" name="maker" placeholder="Введите производителя инструмента" class="form-control">
+        <input type="text" th:value="${el.country}" name="country" placeholder="Введите страну производителя" class="form-control">
+        <input type="text" th:value="${el.prod_text}" name="prod_text" placeholder="Введите модель инструмента" class="form-control">
+        <input type="text" th:value="${el.prodcoast}" name="prodcoast" placeholder="Введите цену" class="form-control">
+        <textarea name="full_text" placeholder="Введите описание" class="form-control" th:text="${el.full_text}"></textarea>
+        <button type="submit" class="btn btn-success">Обновить</button>
+    </form>
+    </div>
+
+
+</div>
+<div th:insert="blocks/footer :: footer"> </div>
+
+</body>
+</html>

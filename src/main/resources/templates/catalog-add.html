@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Каталог сайта</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color:#2F4F4F">
+<header th:insert="blocks/header :: header"> </header>
+
+<div class="container mt-5 my-10">
+    <h1 style="color: #DCDCDC">Добавление товара</h1>
+    <form action="/catalog/add" method="post">
+        <input type="text" name="name" placeholder="Введите название инструмента" class="form-control">
+        <input type="text" name="maker" placeholder="Введите производителя инструмента" class="form-control">
+        <input type="text" name="country" placeholder="Введите страну производителя" class="form-control">
+        <input type="text" name="prod_text" placeholder="Введите модель инструмента" class="form-control">
+        <input type="text" name="prodcoast" placeholder="Введите цену" class="form-control">
+        <textarea name="full_text" placeholder="Введите описание" class="form-control"></textarea>
+        <button type="submit" class="btn btn-success">Добавить</button>
+    </form>
+
+</div>
+<div th:insert="blocks/footer :: footer"> </div>
+
+</body>
+</html>
